@@ -42,6 +42,7 @@ have the latest asdf, and this file has a workaround for this.
 (defun getenv (x)
   #+abcl(extensions:getenv x)
   #+ccl(ccl:getenv x)
+  #+lispworks(harlequin-common-lisp:getenv x)
   #+clasp(ext:getenv x)
   #+clisp(ext:getenv x)
   #+cmucl
@@ -122,6 +123,7 @@ have the latest asdf, and this file has a workaround for this.
     #+clasp (core:quit ret)
     #+clisp (ext:exit ret)
     #+ccl (ccl:quit ret)
+    #+lispworks (lispworks:quit ret)
     #+cmucl (progn (finish-output) (finish-output *error-output*) (unix:unix-exit ret))
     (ignore-errors
      (progn (ensure-asdf)
