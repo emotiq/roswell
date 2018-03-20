@@ -149,6 +149,10 @@ case "$LISP" in
         apt_unless_installed libc6-i386
         ros config set ccl.bit 32
         ;;
+    # lispworks is an alias for lispworks-bin
+    lispworks)
+        LISP=lispworks-bin
+        ;;
     # 'sbcl-bin' is the default
     "")
         LISP=sbcl-bin

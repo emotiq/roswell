@@ -204,6 +204,7 @@
 (system "install-clisp")
 (system "install-cmu-bin")
 (system "install-ecl")
+(system "install-lispworks-bin")
 (system "install-sbcl-bin")
 (system "install-sbcl")
 (system "install+7zip"(:depends-on (:zip)))
