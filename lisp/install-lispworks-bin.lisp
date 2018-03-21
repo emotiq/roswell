@@ -7,10 +7,10 @@
   (uiop:getenv "LISPWORKS_URI"))
 (defparameter *lispworks-tar-key*
   (uiop:getenv "LISPWORKS_TAR_KEY"))
-(defparameter *lispworks-licenses*
-  (uiop:getenv "LISPWORKS_LICENSE"))
 (defparameter *lispworks-serial*
   (uiop:getenv "LISPWORKS_SERIAL"))
+(defparameter *lispworks-licenses*
+  (uiop:getenv "LISPWORKS_LICENSE"))
 
 (defun lispworks-bin-get-version ()
   '("1970-01-01" "0" "0"))
@@ -21,12 +21,13 @@
 
 (defun lispworks-bin-download (argv)
   `(,(merge-pathnames (format nil "archives/~a" "foo.tar.gz") (homedir))
-     "https://slack.net/foo"))
+     *lispworks-tar-uri*)
 
 (defun lispworks-bin-install (argv)
   (let ((uri (opt "uri"))
         (impl-path (lispworks-bin-impl)))
     (ensure-directories-exist impl-path)
+    (lispworks-bin-download argv)
     ;;; download the URI
 
     ;;; decrypt the URI

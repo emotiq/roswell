@@ -6,7 +6,7 @@ roswell does not function without help of C codes.
 |#
 
 (defsystem "roswell"
-  :version "18.3.10.89"
+  :version "18.4.0.0"
   :author "SANO Masatoshi"
   :license "MIT"
   :depends-on ("simple-date-time" "split-sequence" "plump" "zip")
@@ -18,6 +18,7 @@ roswell does not function without help of C codes.
                  (:file "install-ccl-bin" :depends-on ("util-install-quicklisp"))
                  (:file "install-clisp" :depends-on ("install+ffcall" "install+sigsegv"))
                  (:file "install-ecl" :depends-on ("util-install-quicklisp"))
+                 (:file "install-lispworks-bin" :depends-on ("util-install-quicklisp"))
                  (:file "install-sbcl" :depends-on ("util-install-quicklisp"))
                  (:file "install-sbcl-bin" :depends-on ("util-install-quicklisp"))
                  (:file "install-quicklisp" :depends-on ("util-install-quicklisp"))
