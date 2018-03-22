@@ -16,7 +16,7 @@ char** cmd_run_lw(int argc,char** argv,struct sub_command* cmd) {
 
   LVal ret=0;
 
-  char *bin=cat(home,impl_path,SLASH,"lwpro-7.1.0",EXE_EXTENTION,NULL);
+  char *bin=cat(home,impl_path,SLASH,"lwpro-7.1.0.0-e20180322c",EXE_EXTENTION,NULL);
   s(arch),s(os);
   ret=conss(bin,ret);
   s(impl_path);
