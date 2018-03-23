@@ -13,7 +13,7 @@
   (uiop:getenv "LISPWORKS_LICENSE"))
 
 (defun lispworks-bin-get-version ()
-  `("current"))
+  `("7.1.0.0"))
 
 (defun ros/archives/ ()
   (merge-pathnames "archives/ "(homedir)))
@@ -87,7 +87,7 @@
 ;; for now, there's only one, so this will be good enough.
 (defun lispworks-bin-name ()
 ;; also needs to change in <file:../src/cmd-run-lw.c> 
-  "lwpro-7.1.0.0-e20180322c")
+  "lwpro")
 
 (defun lispworks-bin-license (argv)
   (let ((date 

@@ -16,17 +16,16 @@ char** cmd_run_lw(int argc,char** argv,struct sub_command* cmd) {
 
   LVal ret=0;
 
-  char *bin=cat(home,impl_path,SLASH,"lwpro-7.1.0.0-e20180322c",EXE_EXTENTION,NULL);
+  char *bin=cat(home,impl_path,SLASH,"lwpro",EXE_EXTENTION,NULL);
   s(arch),s(os);
   ret=conss(bin,ret);
   s(impl_path);
-  if(help)
-    ret=conss(q("--help"),ret);
-  if(get_opt("version",0))
-    ret=conss(q("--version"),ret);
-  ret=conss(q("--norc"),ret);
-  ret=conss(q("--noinit"),ret); /* ? */
-  ret=conss(q("--eval"),ret);
+  /* if(help) */
+  /*   ret=conss(q("--help"),ret); */
+  /* if(get_opt("version",0)) */
+  /*   ret=conss(q("--version"),ret); */
+  /* ret=conss(q("-siteinit"),ret); ret=conss(q("-"),ret);  */
+  ret=conss(q("-eval"),ret);
   ret=conss(s_cat(q("(progn #-ros.init(cl:load \""),s_escape_string(lispdir()),q("init.lisp"),q("\"))"),NULL),ret);
 
   if(program || script) {

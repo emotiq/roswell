@@ -10,7 +10,7 @@ struct run_impl_t impls_to_run[]={
   {"ccl-bin",&cmd_run_ccl},
   {"ccl32",&cmd_run_ccl},
   {"clasp",&cmd_run_clasp},
-  {"lw",&cmd_run_lw},
+  {"lispworks-bin",&cmd_run_lw},
   {"clisp",&cmd_run_clisp},
   {"clisp32",&cmd_run_clisp},
   {"ecl",&cmd_run_ecl},
