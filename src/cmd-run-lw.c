@@ -26,6 +26,8 @@ char** cmd_run_lw(int argc,char** argv,struct sub_command* cmd) {
   /*   ret=conss(q("--version"),ret); */
   /* ret=conss(q("-siteinit"),ret); ret=conss(q("-"),ret);  */
   ret=conss(q("-eval"),ret);
+  ret=conss(q("(require :asdf)"),ret);
+  ret=conss(q("-eval"),ret);
   ret=conss(s_cat(q("(progn #-ros.init(cl:load \""),s_escape_string(lispdir()),q("init.lisp"),q("\"))"),NULL),ret);
 
   if(program || script) {
